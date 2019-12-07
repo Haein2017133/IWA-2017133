@@ -113,7 +113,9 @@ filter: alpha(opacity=80);">
                 <div class="col-lg-8 mx-auto   card-body "  >
             <h1 class="mt-5" >The list of books </h1>
                  </div>
-                <div id="results" class="col-lg-12 "></div> 
+                <div id="results" class="col-lg-12 ">
+
+                </div> 
                         
             <!-- nav-tabs-->
             <div class="col-lg-12 card-body p-10    ">
@@ -122,7 +124,9 @@ filter: alpha(opacity=80);">
                 <a class="nav-item nav-link active" id="nav-search-tab" data-toggle="tab" href="#nav-search" role="tab" aria-controls="nav-search" aria-selected="true">Search</a>
                 <a class="nav-item nav-link" id="nav-add-tab" data-toggle="tab" href="#nav-add" role="tab" aria-controls="nav-add" aria-selected="false">Add</Address></a>
                 <a class="nav-item nav-link" id="nav-delete-tab" data-toggle="tab" href="#nav-delete" role="tab" aria-controls="nav-delete" aria-selected="false">Delete</a>
-            </div>
+                <a class="nav-item nav-link" id="nav-edit-tab" data-toggle="tab" href="#nav-edit" role="tab" aria-controls="nav-edit" aria-selected="false">Edit</a>
+
+              </div>
             </nav>
             <div class="tab-content" id="nav-tabContent">
             <div class="tab-pane fade show active" id="nav-search" role="tabpanel" aria-labelledby="nav-search-tab">             
@@ -142,7 +146,7 @@ filter: alpha(opacity=80);">
                                 </div>
                             <!-- search end  --> 
                             </div>
-            <div class="tab-pane fade" id="nav-add" role="tabpanel" aria-labelledby="nav-add-tab"> 
+                <div class="tab-pane fade" id="nav-add" role="tabpanel" aria-labelledby="nav-add-tab"> 
             <!-- for addition   -->
                     <div class="col-lg-12 card-body p-10    ">
 
@@ -162,7 +166,7 @@ filter: alpha(opacity=80);">
                                   </div>
 
                                <div class="col-md-4 mb-3">
-                                    <input class="form-control" type="text" name="isbn" placeholder="ISBN" required>
+                                    <input id="bookaddisbn" class="form-control" type="text" name="isbn" placeholder="ISBN" required>
                                     <div class="valid-feedback"> Looks good!</div>
                                     <div class="invalid-feedback">Please provide it. </div>
                                 </div>
@@ -204,32 +208,24 @@ filter: alpha(opacity=80);">
                     </div>
                 <!-- addition end  --> 
                 </div>
-  <div class="tab-pane fade" id="nav-delete" role="tabpanel" aria-labelledby="nav-delete-tab">
+                <div class="tab-pane fade" id="nav-delete" role="tabpanel" aria-labelledby="nav-delete-tab">
               <!-- for delete  -->
-                    <div class="col-lg-12 card-body p-10 ">
-                      <button id="delete"  class="btn btn-outline-dark" >Delete</button>                    <!-- <button type="delete" onclick="select_row()" class="btn btn-outline-dark" >Delete</button>-->
+                    <div class="col-lg-12 card-body p-10    ">
+                      <button id="bookDelete"  class="btn btn-outline-dark" >Delete</button>                    <!-- <button type="delete" onclick="select_row()" class="btn btn-outline-dark" >Delete</button>-->
 
-                        <!-- <form enctype="application/json" action="/book/delete" method="get">
-                            <label for="delete"> ◎ Delete selected item.</label>
-                            <div class="row"  style="float: right;">
-                                  
-                                    <button type="delete" class="btn btn-outline-dark" >Delete</button>
-
-                            </div>
-                        </form> -->
                     </div>
+                  </div>
                 <!-- delete end  --> 
-                <!-- </div>
                 <div class="tab-pane fade" id="nav-edit" role="tabpanel" aria-labelledby="nav-edit-tab"> 
-                  <!-- for new   -->
+                  
                           <div class="col-lg-12 card-body p-10    ">
       
-                              <form class="needs-validation" id="bookAdd" enctype="application/json" action="/book/add" method="post" novalidate>
-                                  <label for="addition"> ◎ Fill the text boxes to add.</label>
+                              <form class="needs-validation" id="bookEdit" enctype="application/json" action="/book/update" method="post" novalidate>
+                                  <label for="edition"> ◎ Fill the text boxes to edit.</label>
                                    <div class="form-row">
                                     <div class="col-md-4 mb-3">
       
-                                          <select class="form-control" name="sec_genre"> <!--name="sec_n" -->
+                                          <select class="form-control" id="editGenre" name="sec_genre"> <!--name="sec_n" -->
                                               <option value="Romance/Erotica">Romance/Erotica</option>
                                               <option value="Crime/Mystery">Crime/Mystery</option>
                                               <option value="Religious/Inspirational">Religious/Inspirational</option>
@@ -240,48 +236,48 @@ filter: alpha(opacity=80);">
                                         </div>
       
                                      <div class="col-md-4 mb-3">
-                                          <input class="form-control" type="text" name="isbn" placeholder="ISBN" required>
+                                          <input class="form-control" id="editIsbn"  type="text" name="isbn" placeholder="ISBN" required>
                                           <div class="valid-feedback"> Looks good!</div>
                                           <div class="invalid-feedback">Please provide it. </div>
                                       </div>
       
                                       <div class="col-md-4 mb-3">
-                                              <input class="form-control" type="text" name="author" placeholder="Author" required>
+                                              <input class="form-control" id="editAuthor" type="text" name="author" placeholder="Author" required>
                                               <div class="valid-feedback"> Looks good!</div>
                                               <div class="invalid-feedback">Please provide it. </div>
                                       </div>
       
                                       <div class="col-md-4 mb-3">
-                                          <input class="form-control" type="text" name="title" placeholder="Title" required>
+                                          <input class="form-control" id="editTitle" type="text" name="title" placeholder="Title" required>
                                            <div class="valid-feedback"> Looks good!</div>
                                            <div class="invalid-feedback">Please provide it. </div>
                                       </div>
       
                                       <div class="col-md-4 mb-3">
-                                              <input class="form-control" type="text" name="publisher" placeholder="Publisher" required>
+                                              <input class="form-control" id="editPublisher" type="text" name="publisher" placeholder="Publisher" required>
                                               <div class="valid-feedback"> Looks good!</div>
                                               <div class="invalid-feedback">Please provide it. </div>
                                        </div>
       
                                       <div class="col-md-4 mb-3">
-                                          <input class="form-control" type="text" name="publishedyear" placeholder="Publisher year" required>
+                                          <input class="form-control" id="editPublishedyear" type="text" name="publishedyear" placeholder="Publisher year" required>
                                           <div class="valid-feedback"> Looks good!</div>
                                           <div class="invalid-feedback">Please provide it. </div>
                                       </div>
       
                                        <div class="col-md-4 mb-3">
-                                              <input class="form-control" type="text" name="price" placeholder="price" required>
+                                              <input class="form-control" id="editPrice" type="text" name="price" placeholder="price" required>
                                               <div class="valid-feedback"> Looks good!</div>
                                               <div class="invalid-feedback">Please provide it. </div>
                                       </div>
       
-                                          <button type="Add" class="btn btn-outline-dark">Add</button>
+                                          <button type="Edit" class="btn btn-outline-dark">Add</button>
       
                                   </div>
                               </form>
                           </div>
                       <!-- edit end  --> 
-                      </div> -->
+                      </div>
                       <!-- new-->
                 </div>
             </div>

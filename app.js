@@ -4,15 +4,18 @@ var http = require('http'),
     express = require('express'),
     fs = require('fs'),
     xmlParse = require('xslt-processor').xmlParse,
-    xsltProcess = require('xslt-processor').xsltProcess;
-    xml2js = require('xml2js'); // thing that i did for additon 
+    xsltProcess = require('xslt-processor').xsltProcess,
+    xml2js = require('xml2js'), // thing that i did for additon 
+    bodyParser = require('body-parser');
 
 var router = express();
 var server = http.createServer(router);
 // helmet 
 router.use(express.static(path.resolve(__dirname,'views'))); // something that we provide to user
-router.use(express.urlencoded({extended: true}));// thing that i did for additon
-router.use(express.json()); // thing that i did for additon //this causes the default setting  quest*****
+// router.use(express.urlencoded({extended: true}));// thing that i did for additon
+// router.use(express.json()); // thing that i did for additon //this causes the default setting  quest*****
+router.use(bodyParser.json()); // support json encoded bodies
+router.use(bodyParser.urlencoded({ extended: true })); // support encoded bodies
 // thing that i did for additon
 
 // Function to read in XML file and convert it to JSON
@@ -135,7 +138,6 @@ router.post('/book/add', function(req,res){
     var result = read();
     res.end(result);
   });
-  
 });
 
 router.get('/book/list', function(req, res) {
@@ -146,7 +148,7 @@ router.get('/book/list', function(req, res) {
 
 //update selected record
 router.post('/book/update', function(req, res){
-
+  console.log('/book/update', req.body);
   updated(req.body.selectedIndex, req.body.entree, function() {
     var result = read();
     res.end(result);
