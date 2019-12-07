@@ -31,6 +31,38 @@ function jsToXmlFile(filename, obj, cb) {
   fs.writeFile(filepath, xml, cb);
 }
 
+// Function to read in a JSON file, add to it & convert to XML
+function create(newBook, cb) {
+  // Function to read in XML file, convert it to JSON, add a new object and write back to XML file
+  xmlFileToJs('ApplebookStore.xml', function(err, result) {
+    if (err) {
+      throw (err);
+    } else {
+      result.bookList.entree.push({'isbn': newBook.isbn, 'author': newBook.author,'title': newBook.title, 'publisher': newBook.publisher, 'publishedyear' : newBook.publishedyear,'genre': newBook.sec_genre,'price': newBook.price});
+
+      jsToXmlFile('ApplebookStore.xml', result, function(err) {
+        if (err) {
+          console.log("jsToXmlFile", err);
+        } else{
+          cb();
+        }
+      });
+    }
+  })
+}
+
+function read() {
+  var xml = fs.readFileSync('ApplebookStore.xml', 'utf8');
+  return xml.toString();
+}
+
+function update(){
+
+}
+
+function deleted(){
+
+}
 
 router.get('/',function(req, res){
     res.render('index');
@@ -42,7 +74,7 @@ router.get('/get/html', function(req, res) { // we change this from '/'
 
     var xml = fs.readFileSync('ApplebookStore.xml', 'utf8');
     var xsl = fs.readFileSync('ApplebookStore.xsl', 'utf8');
-    console.log(xml); //colsole
+    console.log("/get/html", xml); //colsole
     var doc = xmlParse(xml);
     var stylesheet = xmlParse(xsl);
 //this
@@ -56,29 +88,20 @@ router.get('/get/html', function(req, res) { // we change this from '/'
 //add new record into the table
 // '/book/addition'
 router.post('/book/add', function(req,res){
-
-  // Function to read in a JSON file, add to it & convert to XML
+  console.log('/book/add', req.body);
+  create(req.body, function() {
+    // console.log("file saved ")
+    var result = read();
+    res.end(result);
+  });
   
-  function appendJSON(obj) {
-    console.log(obj);
-    // Function to read in XML file, convert it to JSON, add a new object and write back to XML file
-    xmlFileToJs('ApplebookStore.xml', function(err, result) {
-      if (err) throw (err);
-       result.bookList.entree.push({'isbn': obj.isbn, 'author': obj.author,'title': obj.title, 'publisher': obj.publisher, 'publishedyear' : obj.publishedyear,'genre': obj.sec_genre,'price': obj.price});
-      console.log(result);
-      jsToXmlFile('ApplebookStore.xml', result, function(err) {
-        if (err) console.log(err);
-      })
-    })
-  }
-
-  // Call appendJSON function and pass in body of the current POST request
-  appendJSON(req.body);
-
-  // Re-direct the browser back to the page, where the POST request came from
-  res.redirect('back');
-
 });
+
+router.get('/book/list', function(req, res) {
+  res.writeHead(200, {'Content-Type': 'text/html'});
+  var result = read();
+  res.end(result);
+})
 
 //delete selected record
 router.post('/book/delete', function(req, res){
@@ -106,15 +129,13 @@ router.post('/book/delete', function(req, res){
 });
 
 
-
-//search the record 
 router.get('/book/search', function(req,res){
     console.log('/book/search');
 });
-
 
 
 server.listen(process.env.PORT || 3000, process.env.IP, function(){
 var addr = server.address();
 console.log("Server is listening at", addr.address + ":" + addr.port)
 });
+
