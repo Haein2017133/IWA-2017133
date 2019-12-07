@@ -9,11 +9,12 @@ var http = require('http'),
 
 var router = express();
 var server = http.createServer(router);
-
+// helmet 
 router.use(express.static(path.resolve(__dirname,'views'))); // something that we provide to user
 router.use(express.urlencoded({extended: true}));// thing that i did for additon
-router.use(express.json()); // thing that i did for additon
+router.use(express.json()); // thing that i did for additon //this causes the default setting  quest*****
 // thing that i did for additon
+
 // Function to read in XML file and convert it to JSON
 function xmlFileToJs(filename, cb) {
   var filepath = path.normalize(path.join(__dirname, filename));
@@ -44,7 +45,7 @@ router.get('/get/html', function(req, res) { // we change this from '/'
     console.log(xml); //colsole
     var doc = xmlParse(xml);
     var stylesheet = xmlParse(xsl);
-
+//this
     var result = xsltProcess(doc, stylesheet);
 
     res.end(result.toString());
@@ -52,8 +53,9 @@ router.get('/get/html', function(req, res) { // we change this from '/'
 
 });
 
-// POST request to add to JSON & XML files
-router.post('/post/json', function(req, res) {
+//add new record into the table
+// '/book/addition'
+router.post('/book/add', function(req,res){
 
   // Function to read in a JSON file, add to it & convert to XML
   
@@ -77,6 +79,40 @@ router.post('/post/json', function(req, res) {
   res.redirect('back');
 
 });
+
+//delete selected record
+router.post('/book/delete', function(req, res){
+  
+    //  var selectedRecord = req.body.selectedBooks;
+    //    console.log(selectedRecord);
+ 
+         // Function to read in a JSON file, add to it & convert to XML
+  function deleteJSON(obj) {
+    // Function to read in XML file, convert it to JSON, delete the required object and write back to XML file
+    xmlFileToJs('ApplebookStore.xml', function(err, result) {
+      if (err) throw (err);
+      //This is where we delete the object based on the position of the section and position of the entree, as being passed on from index.html
+      delete result.bookList.entree[obj.entree];
+      //This is where we convert from JSON and write back our XML file
+      jsToXmlFile('ApplebookStore.xml', result, function(err) {
+        if (err) console.log(err);
+      })
+    })
+  }
+
+  // Call appendJSON function and pass in body of the current POST request
+  deleteJSON(req.body);
+
+});
+
+
+
+//search the record 
+router.get('/book/search', function(req,res){
+    console.log('/book/search');
+});
+
+
 
 server.listen(process.env.PORT || 3000, process.env.IP, function(){
 var addr = server.address();

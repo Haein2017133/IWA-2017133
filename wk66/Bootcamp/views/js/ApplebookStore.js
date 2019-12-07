@@ -1,4 +1,35 @@
-    $(document).ready(function() {
+
+
+function httpGetAsync(theUrl, callback)
+{
+    console.log(theUrl);
+    // var xmlHttp = new XMLHttpRequest();
+    // xmlHttp.onreadystatechange = function() { 
+    //     if (xmlHttp.readyState == 4 && xmlHttp.status == 200)
+    //         callback(xmlHttp.responseText);
+    // }
+    // xmlHttp.open("GET", theUrl, true); // true for asynchronous 
+    // xmlHttp.send(null);
+}
+
+//https://plainjs.com/javascript/ajax/send-ajax-get-and-post-requests-47/
+function postAjax(url, data, success) {
+    var params = typeof data == 'string' ? data : Object.keys(data).map(
+            function(k){ return encodeURIComponent(k) + '=' + encodeURIComponent(data[k]) }
+        ).join('&');
+
+    var xhr = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject("Microsoft.XMLHTTP");
+    xhr.open('POST', url);
+    xhr.onreadystatechange = function() {
+        if (xhr.readyState>3 && xhr.status==200) { success(xhr.responseText); }
+    };
+    xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
+    xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+    xhr.send(params);
+    return xhr;
+}
+
+ $(document).ready(function() {
            $("searchBt").click(function () {
             $("#searchID").keyup(function() {
                 var k = $(obj.search);
@@ -35,7 +66,8 @@ function calculateBill(idMenuTable) {
 			var oTR = getParentTag(aCBTags[i],'TR');
 			
 										// retrieve the price from the price column, which is the third column in the table
-			var oTDPrice = oTR.getElementsByTagName('TD')[2];
+			var oTDPrice = oTR.getElementsByTagName('TD')[7]; 
+            //take price from colum 7 TB column 
 										// the first child text node of the column contains the price
 			fBillTotal += parseFloat(oTDPrice.firstChild.data);
 		};
@@ -46,7 +78,8 @@ function calculateBill(idMenuTable) {
 
 										// This function either turns on or off the row highlighting for vegetarian
 										// items (depending on the value of bShowVeg)
-function highlightVegetarian(idTable, bShowVeg) {
+function highlightVegetarian(idTable, bShowVeg) { 
+    //bshow is the check box 
 										// if bShowVeg is true, then we're highlighting vegetarian
 										//	meals, otherwise we're unhighlighting them.
 	var i=0;

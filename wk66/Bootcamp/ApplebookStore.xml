@@ -171,7 +171,7 @@
     <genre>Horror </genre>
     <price>19.99</price>
   </entree>
-  <entree>
+  <entree vegetarian="true">
     <isbn>0-310-331-1</isbn>
     <author>Joe Hill</author>
     <title>The Fire Man</title>
@@ -180,7 +180,7 @@
     <genre>Horror </genre>
     <price>21.99</price>
   </entree>
-  <entree>
+  <entree vegetarian="true">
     <isbn>5-110-121-1</isbn>
     <author>Lee Child</author>
     <title>Night School</title>
@@ -192,19 +192,19 @@
   <entree>
     <isbn>1</isbn>
     <author>1</author>
-    <title/>
+    <title>1</title>
     <publisher>1</publisher>
     <publishedyear>1</publishedyear>
     <genre>Religious/Inspirational</genre>
     <price>1</price>
   </entree>
   <entree>
-    <isbn>s</isbn>
-    <author>s</author>
-    <title>s</title>
-    <publisher>s</publisher>
-    <publishedyear>s</publishedyear>
-    <genre>Romance/Erotica</genre>
-    <price>s</price>
+    <isbn>d</isbn>
+    <author>d</author>
+    <title>d</title>
+    <publisher>d</publisher>
+    <publishedyear>d</publishedyear>
+    <genre>Religious/Inspirational</genre>
+    <price>d</price>
   </entree>
 </bookList>
