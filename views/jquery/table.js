@@ -77,8 +77,7 @@ function select_row()
 	
 		var entree = $(this).attr("id") - 1;
         delete_row( entree);
-               console.log("entree");
-                console.log(entree);
+        console.log("entree", entree);
 
 	})
 };
@@ -97,7 +96,7 @@ function delete_row(ent)
 				entree: ent
 			},
 			cache: false,
-			success: setTimeout(draw_table, 1000)
+			success: setTimeout(draw_table,1000)
 		})
 	})
 };

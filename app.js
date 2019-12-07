@@ -60,8 +60,29 @@ function update(){
 
 }
 
-function deleted(){
-
+function deleted(entreeArray, cb) {
+ // Function to read in XML file, convert it to JSON, delete the required object and write back to XML file
+  xmlFileToJs('ApplebookStore.xml', function(err, result) {
+    if (err) {
+      throw (err);
+    } else {
+      //This is where we delete the object based on the position of the section and position of the entree, as being passed on from index.html
+      
+      for (i = entreeArray.length - 1 ; i >= 0; i--) {
+        var selectedIndex = entreeArray[i];
+        delete result.bookList.entree[selectedIndex];
+      }
+      
+      //This is where we convert from JSON and write back our XML file
+      jsToXmlFile('ApplebookStore.xml', result, function(err) {
+        if (err) {
+          console.log(err);
+        } else {
+          cb();
+        }
+      });
+    } 
+  }); 
 }
 
 router.get('/',function(req, res){
@@ -105,26 +126,12 @@ router.get('/book/list', function(req, res) {
 
 //delete selected record
 router.post('/book/delete', function(req, res){
-  
-    //  var selectedRecord = req.body.selectedBooks;
-    //    console.log(selectedRecord);
- 
-         // Function to read in a JSON file, add to it & convert to XML
-  function deleteJSON(obj) {
-    // Function to read in XML file, convert it to JSON, delete the required object and write back to XML file
-    xmlFileToJs('ApplebookStore.xml', function(err, result) {
-      if (err) throw (err);
-      //This is where we delete the object based on the position of the section and position of the entree, as being passed on from index.html
-      delete result.bookList.entree[obj.entree];
-      //This is where we convert from JSON and write back our XML file
-      jsToXmlFile('ApplebookStore.xml', result, function(err) {
-        if (err) console.log(err);
-      })
-    })
-  }
 
-  // Call appendJSON function and pass in body of the current POST request
-  deleteJSON(req.body);
+  var entreeArray = req.body.entree;
+  deleted(entreeArray, function() { // when it compelted, read the reasul again 
+    var result = read();
+    res.end(result);
+  });
 
 });
 

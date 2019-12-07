@@ -43,7 +43,7 @@
                           
                             <xsl:for-each select="/bookList/entree">
                             
-                                <tr align="center">
+                                <tr  id="{position()}" align="center">
                                     <xsl:attribute name="vegetarian">
                                          <xsl:value-of select="boolean(./@vegetarian)" />
                                 </xsl:attribute>

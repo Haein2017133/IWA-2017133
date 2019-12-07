@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <bookList>
-  <entree>
+<entree>
     <isbn>0-332-3233-4</isbn>
     <author>J.R.R Tolken</author>
     <title>The Hobbit</title>
@@ -335,24 +335,6 @@
   </entree>
   <entree>
     <isbn>haeinkim</isbn>
-    <author>s</author>
-    <title>d</title>
-    <publisher>s</publisher>
-    <publishedyear>11</publishedyear>
-    <genre>Religious/Inspirational</genre>
-    <price>s</price>
-  </entree>
-  <entree>
-    <isbn>haeinkim</isbn>
-    <author>s</author>
-    <title>d</title>
-    <publisher>s</publisher>
-    <publishedyear>11</publishedyear>
-    <genre>Religious/Inspirational</genre>
-    <price>s</price>
-  </entree>
-  <entree>
-    <isbn>haeinkim2</isbn>
     <author>s</author>
     <title>d</title>
     <publisher>s</publisher>
