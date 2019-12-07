@@ -56,8 +56,28 @@ function read() {
   return xml.toString();
 }
 
-function update(){
+function updated(selectedIndex, entree, cb) {
+//select
+//edit
+//save
+  // Function to read in XML file, convert it to JSON, delete the required object and write back to XML file
+  xmlFileToJs('ApplebookStore.xml', function(err, result) {
+    if (err) {
+      throw (err);
+    } else {
+      //This is where we delete the object based on the position of the section and position of the entree, as being passed on from index.html
+      result.bookList.entree[selectedIndex] = entree
 
+      //This is where we convert from JSON and write back our XML file
+      jsToXmlFile('ApplebookStore.xml', result, function(err) {
+        if (err) {
+          console.log(err);
+        } else {
+          cb();
+        }
+      });
+    } 
+  }); 
 }
 
 function deleted(entreeArray, cb) {
@@ -123,6 +143,15 @@ router.get('/book/list', function(req, res) {
   var result = read();
   res.end(result);
 })
+
+//update selected record
+router.post('/book/update', function(req, res){
+
+  updated(req.body.selectedIndex, req.body.entree, function() {
+    var result = read();
+    res.end(result);
+  });
+});
 
 //delete selected record
 router.post('/book/delete', function(req, res){
