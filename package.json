@@ -1,0 +1,28 @@
+{
+  "name": "iwa-2017133",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Haein2017133/IWA-2017133.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Haein2017133/IWA-2017133/issues"
+  },
+  "homepage": "https://github.com/Haein2017133/IWA-2017133#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "fs": "0.0.1-security",
+    "http": "0.0.0",
+    "path": "^0.12.7",
+    "xml2js": "^0.4.22",
+    "xslt-processor": "^0.11.5"
+  }
+}
