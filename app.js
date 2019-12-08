@@ -170,7 +170,7 @@ router.post('/book/delete', function(req, res){
 
 
 router.get('/book/search', function(req,res){
-    console.log('/book/search');
+    console.log("sorry out of service! no time for search :)",'/book/search');
 });
 
 
