@@ -164,41 +164,43 @@ filter: alpha(opacity=80);">
                                          <option selected>Genre</option>
                                     </select>
                                   </div>
-
+                                   <!--/https://blog.outsider.ne.kr/360
+                                  https://highcode.tistory.com/6
+                                  -->
                                <div class="col-md-4 mb-3">
-                                    <input id="bookaddisbn" class="form-control" type="text" name="isbn" placeholder="ISBN" required>
+                                    <input id="bookaddisbn" class="form-control" type="text" pattern="^[0-9-]*$" name="isbn" placeholder="ISBN" required>
                                     <div class="valid-feedback"> Looks good!</div>
-                                    <div class="invalid-feedback">Please provide it. </div>
+                                    <div class="invalid-feedback">Please provide number with hyphen </div>
                                 </div>
 
                                 <div class="col-md-4 mb-3">
-                                        <input class="form-control" type="text" name="author" placeholder="Author" required>
+                                        <input class="form-control" type="text" name="author" pattern="^[a-zA-Z\s\.]*$" placeholder="Author" required>
                                         <div class="valid-feedback"> Looks good!</div>
-                                        <div class="invalid-feedback">Please provide it. </div>
+                                        <div class="invalid-feedback">Please provide it(only letter or .). </div>
                                 </div>
 
                                 <div class="col-md-4 mb-3">
-                                    <input class="form-control" type="text" name="title" placeholder="Title" required>
+                                    <input class="form-control" type="text" name="title" pattern="^[a-zA-Z\.]*$" placeholder="Title" required>
                                      <div class="valid-feedback"> Looks good!</div>
-                                     <div class="invalid-feedback">Please provide it. </div>
+                                     <div class="invalid-feedback">Please provide it. </div> 
                                 </div>
 
                                 <div class="col-md-4 mb-3">
-                                        <input class="form-control" type="text" name="publisher" placeholder="Publisher" required>
+                                        <input class="form-control" type="text" name="publisher" pattern="^[a-zA-Z\s\.]*$" placeholder="Publisher" required>
                                         <div class="valid-feedback"> Looks good!</div>
-                                        <div class="invalid-feedback">Please provide it. </div>
+                                        <div class="invalid-feedback">Please provide it(only letter or .). </div>
                                  </div>
 
                                 <div class="col-md-4 mb-3">
-                                    <input class="form-control" type="text" name="publishedyear" placeholder="Publisher year" required>
+                                    <input class="form-control" type="text" name="publishedyear" pattern="^[0-9]*$" placeholder="Publisher year" required>
                                     <div class="valid-feedback"> Looks good!</div>
-                                    <div class="invalid-feedback">Please provide it. </div>
+                                    <div class="invalid-feedback">Please provide it(only number). </div>
                                 </div>
 
                                  <div class="col-md-4 mb-3">
-                                        <input class="form-control" type="text" name="price" placeholder="price" required>
+                                        <input class="form-control" type="text" name="price" pattern="^[0-9]*$" placeholder="price" required>
                                         <div class="valid-feedback"> Looks good!</div>
-                                        <div class="invalid-feedback">Please provide it. </div>
+                                        <div class="invalid-feedback">Please provide it(only number). </div>
                                 </div>
 
                                     <button type="Add" class="btn btn-outline-dark">Add</button>
@@ -211,11 +213,13 @@ filter: alpha(opacity=80);">
                 <div class="tab-pane fade" id="nav-delete" role="tabpanel" aria-labelledby="nav-delete-tab">
               <!-- for delete  -->
                     <div class="col-lg-12 card-body p-10    ">
-                      <button id="bookDelete"  class="btn btn-outline-dark" >Delete</button>                    <!-- <button type="delete" onclick="select_row()" class="btn btn-outline-dark" >Delete</button>-->
+                      <button id="bookDelete"  class="btn btn-outline-dark" >Delete</button>                   
+                       <!-- <button type="delete" onclick="select_row()" class="btn btn-outline-dark" >Delete</button>-->
 
                     </div>
                   </div>
                 <!-- delete end  --> 
+                     <!-- for editing  -->
                 <div class="tab-pane fade" id="nav-edit" role="tabpanel" aria-labelledby="nav-edit-tab"> 
                   
                           <div class="col-lg-12 card-body p-10    ">
@@ -236,39 +240,39 @@ filter: alpha(opacity=80);">
                                         </div>
       
                                      <div class="col-md-4 mb-3">
-                                          <input class="form-control" id="editIsbn"  type="text" name="isbn" placeholder="ISBN" required>
+                                          <input class="form-control" id="editIsbn"  type="text" pattern="^[0-9-]*$" name="isbn" placeholder="ISBN" required>
                                           <div class="valid-feedback"> Looks good!</div>
-                                          <div class="invalid-feedback">Please provide it. </div>
+                                          <div class="invalid-feedback">Please provide number with hyphen </div>
                                       </div>
       
                                       <div class="col-md-4 mb-3">
-                                              <input class="form-control" id="editAuthor" type="text" name="author" placeholder="Author" required>
+                                              <input class="form-control" id="editAuthor" type="text" pattern="^[a-zA-Z\s\.]*$" name="author" placeholder="Author" required>
                                               <div class="valid-feedback"> Looks good!</div>
-                                              <div class="invalid-feedback">Please provide it. </div>
+                                              <div class="invalid-feedback">Please provide it(only letter or .). </div>
                                       </div>
       
                                       <div class="col-md-4 mb-3">
-                                          <input class="form-control" id="editTitle" type="text" name="title" placeholder="Title" required>
+                                          <input class="form-control" id="editTitle" type="text"  name="title" placeholder="Title" required>
                                            <div class="valid-feedback"> Looks good!</div>
                                            <div class="invalid-feedback">Please provide it. </div>
                                       </div>
       
                                       <div class="col-md-4 mb-3">
-                                              <input class="form-control" id="editPublisher" type="text" name="publisher" placeholder="Publisher" required>
+                                              <input class="form-control" id="editPublisher" type="text" pattern="^[a-zA-Z\s\.]*$"  name="publisher" placeholder="Publisher" required>
                                               <div class="valid-feedback"> Looks good!</div>
-                                              <div class="invalid-feedback">Please provide it. </div>
+                                              <div class="invalid-feedback">Please provide it(only letter or .). </div>
                                        </div>
       
                                       <div class="col-md-4 mb-3">
-                                          <input class="form-control" id="editPublishedyear" type="text" name="publishedyear" placeholder="Publisher year" required>
+                                          <input class="form-control" id="editPublishedyear" type="text" pattern="^[0-9]*$"  name="publishedyear" placeholder="Publisher year" required>
                                           <div class="valid-feedback"> Looks good!</div>
-                                          <div class="invalid-feedback">Please provide it. </div>
+                                          <div class="invalid-feedback">Please provide it(only number). </div>
                                       </div>
       
                                        <div class="col-md-4 mb-3">
-                                              <input class="form-control" id="editPrice" type="text" name="price" placeholder="price" required>
+                                              <input class="form-control" id="editPrice" type="text" pattern="^[0-9]*$" name="price" placeholder="price" required>
                                               <div class="valid-feedback"> Looks good!</div>
-                                              <div class="invalid-feedback">Please provide it. </div>
+                                              <div class="invalid-feedback">Please provide it(only number). </div>
                                       </div>
       
                                           <button type="Edit" class="btn btn-outline-dark">Add</button>
@@ -278,7 +282,7 @@ filter: alpha(opacity=80);">
                           </div>
                       <!-- edit end  --> 
                       </div>
-                      <!-- new-->
+                   
                 </div>
             </div>
             </div>

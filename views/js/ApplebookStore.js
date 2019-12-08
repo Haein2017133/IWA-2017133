@@ -29,20 +29,6 @@ function postAjax(url, data, success) {
     return xhr;
 }
 
- $(document).ready(function() {
-           $("searchBt").click(function () {
-            $("#searchID").keyup(function() {
-                var k = $(obj.search);
-                $("#bookListTable> tbody > tr").hide();
-           var temp = $("#bookListTable > tbody > tr > td:nth-child(8n+4):contains('" + k + "')");
-
-                $(temp).parent().show();
-        
-             })
-            })
-})
-
-
 
 var gEntreeCount = 0;
 										// returns a number that represents the sum of all the selected menu
