@@ -82,7 +82,7 @@ console.log("testing bookAdd");
 						type: 'post',
 						dataType: 'application/json',
 						data: {
-							"selectedIndex" : 0, 
+							"selectedIndex" : editNumber, 
 							"entree": { 
 								"sec_genre": editGenre.options[editGenre.selectedIndex].value,
 								"isbn": editIsbn.value,
@@ -139,6 +139,8 @@ function draw_table()
 //     var bookIdArray = [2, 3, 4, 5, 6];
 //     postAjax("/book/delete", {selectedBooks : bookIdArray});
 		var deletedArray = [];
+		var editNumber;
+
 function select_row()
 {
 	$("#bookListTable tbody tr[id] input").click(function ()
@@ -148,8 +150,11 @@ function select_row()
         console.log("this value", this);
 	
 		var entree = $(this.parentNode.parentNode).attr("id") - 1;
-        delete_row(entree);
+       
 		console.log("selectedEntree", entree);
+		editNumber = entree;
+		console.log("edited number", editNumber);
+		
 		if(deletedArray.includes(entree)) {
 			var index = deletedArray.indexOf(entree);
 			if (index > -1) {
@@ -164,22 +169,7 @@ function select_row()
 	})
 };
 
-function delete_row(ent)
-{
-	$("#delete").click(function () {
-		$.ajax(
-		{
-			url: '/book/delete',
-			type: 'POST',
-			data:
-			{
-				entree: ent
-			},
-			cache: false,
-			success: setTimeout(draw_table,1000)
-		})
-	})
-};
+
 
 $(document).ready(function ()
 {

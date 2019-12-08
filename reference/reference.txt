@@ -1,0 +1,38 @@
+Reference 
+Flavio Copes. “Validating Input in Express Using Express-Validator.” Flaviocopes.Com, 29 Aug. 2018, flaviocopes.com/express-validate-input/.
+from nettuts. “알고 있어야 할 8가지 정규식 표현 from Nettuts+ :: Outsider’s Dev Story.” Outsider’s Dev Story, 14 Aug. 2009, blog.outsider.ne.kr/360. Accessed 8 Dec. 2019.
+JavaScript - Node 객체. “JavaScript - Node 객체.” YouTube, 5 May 2014, youtu.be/0rM03Tl06_4. Accessed 8 Dec. 2019.
+JavaScript, in. “Sending POST Data with AJAX in JavaScript.” YouTube, 7 Mar. 2018, youtu.be/PIKrh5ofQF0. Accessed 8 Dec. 2019.
+---. “Working with XML in JavaScript.” YouTube, Oct. 2019, youtu.be/5YQXVgNZvRk. Accessed 8 Dec. 2019.
+Jimmy. “Best Online Tool to Convert SQL to XML.” Codebeautify.Org, 2019, codebeautify.org/sql-to-xml-converter#. Accessed 8 Dec. 2019.
+mikhail-cct. “Mikhail-Cct/CA1-In-Class-Demo.” GitHub, 6 Dec. 2019, github.com/mikhail-cct/CA1-In-class-Demo. Accessed 8 Dec. 2019.
+Mosh, Express.js Tutorial: Build RESTful APIs with Node and Express. “Express.Js Tutorial: Build RESTful APIs with Node and Express | Mosh.” YouTube, 8 Mar. 2018, youtu.be/pKd0Rpw7O48. Accessed 8 Dec. 2019.
+Otto, Mark. “Examples.” Getbootstrap.Com, 2019, getbootstrap.com/docs/4.3/examples/.
+---. “Forms.” Getbootstrap.Com, 2019, getbootstrap.com/docs/4.3/components/forms/#validation.
+---. “Reboot.” Getbootstrap.Com, 2019, getbootstrap.com/docs/4.3/content/reboot/#forms.
+Petty, David. “XML vs JSON: Security Risks.” Medium, Independent Security Evaluators, 15 May 2017, blog.securityevaluators.com/xml-vs-json-security-risks-22e5320cf529. Accessed 8 Dec. 2019.
+Pure JavaScript CRUD Operations with Html. “Pure JavaScript CRUD Operations with Html.” YouTube, 11 Oct. 2018, youtu.be/-rNQeJi3Wp4. Accessed 8 Dec. 2019.
+Ramirez, Antonio. “Automatic and Painless Sanitization for All Express Routes.” Medium, Medium, 22 Apr. 2019, medium.com/@antonioramirezofficial/automatic-and-painless-sanitization-for-all-express-routes-ae24cbe653c8.
+“Send Ajax GET and POST Requests.” Plainjs.Com, 2019, plainjs.com/javascript/ajax/send-ajax-get-and-post-requests-47/. Accessed 8 Dec. 2019.
+Start Bootstrap. “Agency - One Page Bootstrap Theme.” Start Bootstrap, 2014, startbootstrap.com/themes/agency/. Accessed 8 Dec. 2019.
+“[TIP] 정규표현식(Pattern Matching) 완전 정리!” HighCode, 22 Sept. 2016, highcode.tistory.com/6. Accessed 8 Dec. 2019.
+Unsplash. “Best 500+ Library Pictures [HD] | Download Free Images on Unsplash.” Unsplash.Com, Unsplash, 2019, unsplash.com/s/photos/library.
+
+https://getbootstrap.com/docs/4.3/components/forms/#validation
+https://flaviocopes.com/express-validate-input/
+
+https://medium.com/@antonioramirezofficial/automatic-and-painless-sanitization-for-all-express-routes-ae24cbe653c8
+https://github.com/mikhail-cct/CA1-In-class-Demo
+https://startbootstrap.com/themes/agency/
+https://getbootstrap.com/docs/4.3/examples/
+https://blog.securityevaluators.com/xml-vs-json-security-risks-22e5320cf529
+https://plainjs.com/javascript/ajax/send-ajax-get-and-post-requests-47/
+https://blog.outsider.ne.kr/360
+https://highcode.tistory.com/6
+
+https://codebeautify.org/sql-to-xml-converter#
+https://youtu.be/5YQXVgNZvRk
+https://youtu.be/PIKrh5ofQF0
+https://youtu.be/0rM03Tl06_4
+https://youtu.be/pKd0Rpw7O48
+https://youtu.be/-rNQeJi3Wp4

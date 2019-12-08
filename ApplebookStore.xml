@@ -171,31 +171,4 @@
     <genre>Horror </genre>
     <price>19.99</price>
   </entree>
-  <entree Horror="true">
-    <isbn>0-310-331-1</isbn>
-    <author>Joe Hill</author>
-    <title>The Fire Man</title>
-    <publisher>Scholastic</publisher>
-    <publishedyear>2016</publishedyear>
-    <genre>Horror </genre>
-    <price>21.99</price>
-  </entree>
-  <entree Horror="true">
-    <isbn>5-110-121-1</isbn>
-    <author>Lee Child</author>
-    <title>Night School</title>
-    <publisher>Pearson publisher</publisher>
-    <publishedyear>2015</publishedyear>
-    <genre>Horror </genre>
-    <price>29.99</price>
-  </entree>
-  <entree>
-    <isbn>11</isbn>
-    <author>ss</author>
-    <title>ss</title>
-    <publisher>ss</publisher>
-    <publishedyear>22</publishedyear>
-    <genre>Genre</genre>
-    <price>4</price>
-  </entree>
 </bookList>
