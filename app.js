@@ -7,6 +7,7 @@ var http = require('http'),
     xsltProcess = require('xslt-processor').xsltProcess,
     xml2js = require('xml2js'), // thing that i did for additon 
     bodyParser = require('body-parser');
+    expAutoSan = require('express-autosanitizer');//validation
 
 var router = express();
 var server = http.createServer(router);
@@ -14,9 +15,10 @@ var server = http.createServer(router);
 router.use(express.static(path.resolve(__dirname,'views'))); // something that we provide to user
 // router.use(express.urlencoded({extended: true}));// thing that i did for additon
 // router.use(express.json()); // thing that i did for additon //this causes the default setting  quest*****
-router.use(bodyParser.json()); // support json encoded bodies
-router.use(bodyParser.urlencoded({ extended: true })); // support encoded bodies
+router.use(express.json()); // support json encoded bodies
+router.use(express.urlencoded({ extended: true })); // support encoded bodies
 // thing that i did for additon
+router.use(expAutoSan.allUnsafe);
 
 // Function to read in XML file and convert it to JSON
 function xmlFileToJs(filename, cb) {
