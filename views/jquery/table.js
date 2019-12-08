@@ -22,7 +22,7 @@ $(function() {
   //real creation ***
     //hang on event of form with id=myform
     $("#bookAdd").submit(function(e) {
-console.log("hey");
+console.log("testing bookAdd");
         //prevent Default functionalityjkl;
 		e.preventDefault();
 		var form = document.getElementById('bookAdd');
@@ -47,7 +47,7 @@ console.log("hey");
     });
 
 	$("#bookEdit").submit(function(e) {
-		console.log("hey");
+		console.log("testing bookEdit");
 		//prevent Default functionalityjkl;
 		e.preventDefault();
 		var form = document.getElementById('bookEdit');
