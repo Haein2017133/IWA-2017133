@@ -63,7 +63,7 @@ function calculateBill(idMenuTable) {
 
 // This function either turns on or off the row highlighting for vegetarian
 // items (depending on the value of bShowVeg)
-function highlightVegetarian(idTable, bShowVeg) { 
+function HighlightHorror(idTable, bShowVeg) { 
 //bshow is the check box 
 // if bShowVeg is true, then we're highlighting vegetarian
 //	meals, otherwise we're unhighlighting them.
@@ -74,7 +74,7 @@ function highlightVegetarian(idTable, bShowVeg) {
 // walk through each of the table rows and see if it has a 
 // "vegetarian" attribute on it.
 	for (i=0; i < aTRs.length; i++) {
-		if (aTRs[i].getAttribute('vegetarian') && aTRs[i].getAttribute('vegetarian') == "true") {
+		if (aTRs[i].getAttribute('Horror') && aTRs[i].getAttribute('Horror') == "true") {
 			if (bShowVeg){
 				aTRs[i].style.backgroundColor = "lightGreen";
 			} else {

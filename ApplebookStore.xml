@@ -108,7 +108,7 @@
     <genre>Religious/Inspirational</genre>
     <price>16.99</price>
   </entree>
-  <entree>
+  <entree Horror="true">
     <isbn>0-230-166-1</isbn>
     <author>Anne Rice</author>
     <title>Tale of the Thief</title>
@@ -153,7 +153,7 @@
     <genre>Science Fiction/Fantasy </genre>
     <price>29.99</price>
   </entree>
-  <entree>
+  <entree Horror="true">
     <isbn>0-410-9921-1</isbn>
     <author>Sarah Mass</author>
     <title>Empire of Storms</title>
@@ -162,7 +162,7 @@
     <genre>Horror </genre>
     <price>28.99</price>
   </entree>
-  <entree>
+  <entree Horror="true">
     <isbn>0-413-121-1</isbn>
     <author>J.D Vance</author>
     <title>Hillbilly Elegy</title>
@@ -171,7 +171,7 @@
     <genre>Horror </genre>
     <price>19.99</price>
   </entree>
-  <entree vegetarian="true">
+  <entree Horror="true">
     <isbn>0-310-331-1</isbn>
     <author>Joe Hill</author>
     <title>The Fire Man</title>
@@ -180,7 +180,7 @@
     <genre>Horror </genre>
     <price>21.99</price>
   </entree>
-  <entree vegetarian="true">
+  <entree Horror="true">
     <isbn>5-110-121-1</isbn>
     <author>Lee Child</author>
     <title>Night School</title>
@@ -188,5 +188,14 @@
     <publishedyear>2015</publishedyear>
     <genre>Horror </genre>
     <price>29.99</price>
+  </entree>
+  <entree>
+    <isbn>11</isbn>
+    <author>ss</author>
+    <title>ss</title>
+    <publisher>ss</publisher>
+    <publishedyear>22</publishedyear>
+    <genre>Genre</genre>
+    <price>4</price>
   </entree>
 </bookList>

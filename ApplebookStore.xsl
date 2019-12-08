@@ -11,9 +11,9 @@
         document.forms[0].txtBillAmt.value = calculateBill('bookListTable'); 
         <!--total 0is number of form--> 
     });
-    document.querySelector("#showVeg").addEventListener("click", function() { 
+    document.querySelector("#showH").addEventListener("click", function() { 
         <!--hightlight backend--> 
-        highlightVegetarian("bookListTable", this.checked);
+        HighlightHorror("bookListTable", this.checked);
     });
 	</script>
 
@@ -39,8 +39,8 @@
         <xsl:for-each select="/bookList/entree">
                             
             <tr  id="{position()}" align="center">
-                <xsl:attribute name="vegetarian">
-                        <xsl:value-of select="boolean(./@vegetarian)" />
+                <xsl:attribute name="Horror">
+                        <xsl:value-of select="boolean(./@Horror)" />
                 </xsl:attribute>
                 <td >
                     <input name="item0" type="checkbox" />
@@ -79,8 +79,9 @@
             <button type="button" class="btn btn-primary" name="btnCalcBill" value="Calculate Bill" id="calcBill">Calculate Bill</button>
             Total: €
             <input type="text" name="txtBillAmt" />
-            <input type="checkbox" name="cbOpts" value="isVeg" id="showVeg" />
-            <label for="showVeg">Highlight Vegetarian Meals</label></p>
+            <input type="checkbox" name="cbOpts" value="isH" id="showH" />
+            <label for="showH">Highlight Horror</label></p>
+       
     </form>
     </div>
     </xsl:template>
